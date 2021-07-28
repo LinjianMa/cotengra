@@ -134,13 +134,6 @@ def gumbel():
     return -math.log(-math.log(random.uniform(0.0, 1.0)))
 
 
-try:
-    import numba as nb
-    gumbel = nb.njit(gumbel)
-except ImportError:
-    pass
-
-
 class GreedyCompressed:
     """A greedy contraction path finder that takes into account the effect of
     compression, and can also make use of subgraph size and centrality.
